@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-color:#e91e63;
+$primary-color-hover:#bb194f;
+$gray-light:#424242;
+$gray-dark:rgb(46 46 46);
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: white;
+    background-color: $gray-dark;
+}
+
+.cont{
+    max-width: 80vw;
+    margin: 3% auto auto auto;
+    background-color: $gray-dark;
+    border: 2px $gray-light solid;
+    border-radius: 3%;
+}

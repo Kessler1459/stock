@@ -1,0 +1,13 @@
+<section class="cont">
+    <div *ngIf=!edit>
+        <h2>{{product.model}}, product.brand</h2>
+        <i>{{product.barcode}}</i>
+        <p>{{product.description}}</p>
+        <img [src]=product.imageUrl alt="product-image">
+        <p>{{product.units}} units</p>
+        <p>{{product.price}}$</p>
+        <p>{{product.category}}</p>
+    </div>
+    <app-item-edit [product]="product" *ngIf=edit></app-item-edit>
+    <button mat-stroked-button (click)="toggleEdit()">Edit</button>
+</section>

@@ -1,0 +1,26 @@
+mat-form-field{
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+}
+
+table {
+	width: 100%;
+	th {
+		&:hover {
+			cursor: pointer;
+			user-select: none;
+		}
+	}
+    .mat-r{
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(87, 87, 87);
+        }
+    }
+}
+
+mat-paginator{
+    border-radius: 3%;
+}

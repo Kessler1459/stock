@@ -1,0 +1,14 @@
+<mat-form-field>
+    <mat-label>Barcode</mat-label>
+    <input matInput type="text" [(ngModel)]="barcode" (keyup)="onChange()">
+</mat-form-field>
+<div *ngIf="product">
+    <span>{{product.model}}, {{product.brand}}</span>
+    <p><span>Quantity:{{product.units}}</span></p>
+
+    <mat-form-field>
+        <mat-label>Units</mat-label>
+        <input matInput type="number" [formControl]="units">
+    </mat-form-field>
+    <button mat-button (click)="onSubmit()">Accept</button>
+</div>
