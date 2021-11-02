@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Category, Product } from '../classes/product';
+import { Provider } from '../classes/provider';
 import { ProductService } from '../services/product.service';
+import { ProviderService } from '../services/provider.service';
 
 @Component({
     selector: 'app-add-item',
@@ -10,17 +12,20 @@ import { ProductService } from '../services/product.service';
 })
 export class AddItemComponent implements OnInit {
     categories = Category;
+    providers: Provider[];
     form: FormGroup;
-    constructor(private productService: ProductService) { }
+    constructor(private productService: ProductService, private providerService: ProviderService) { }
 
     ngOnInit(): void {
+        this.providerService.getAll().subscribe(providers => this.providers = providers)
         this.form = new FormGroup({
             model: new FormControl(),
             brand: new FormControl(),
             barcode: new FormControl(),
             description: new FormControl(),
             price: new FormControl(),
-            category: new FormControl()
+            category: new FormControl(),
+            provider: new FormControl()
         })
     }
 
@@ -34,6 +39,8 @@ export class AddItemComponent implements OnInit {
         newProd.units = 0;
         //todo imgurl?
         newProd.category = this.form.value.category;
+        newProd.provider= this.form.value.provider.id;
+        
         this.productService.addProduct(newProd);
     }
 

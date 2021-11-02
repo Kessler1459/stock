@@ -1,3 +1,5 @@
+import { Provider } from "./provider";
+
 export class Product {
     id: number | undefined;
     brand: string | undefined;
@@ -8,9 +10,9 @@ export class Product {
     units: number | undefined;
     description: string | undefined;
     category: Category | undefined;
+    provider : Provider |number| undefined
 
-
-    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category) {
+    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?:Provider) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -20,6 +22,7 @@ export class Product {
         this.units = units;
         this.description = description;
         this.category = category;
+        this.provider = provider;
     }
 }
 

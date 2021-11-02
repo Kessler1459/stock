@@ -7,7 +7,7 @@ import { Provider } from '../classes/provider';
     providedIn: 'root'
 })
 export class ProviderService {
-    apiUrl: string = "http://localhost:8080/providers";
+    private apiUrl: string = "http://localhost:8080/providers";
 
     constructor(private http: HttpClient) { }
 

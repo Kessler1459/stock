@@ -12,15 +12,10 @@ export class ProductService {
     constructor(private http: HttpClient) { }
 
     getAll(): Observable<Product[]> {
-        /*return new Promise((res) => res(
-            [new Product(2, "brand1", "model1", "url1", "barcode1", 4, 20, "descript1", Category.A),
-            new Product(1, "barnd2", "pepejaja", "urll", "barc", 5, 32, "descript2", Category.A)])
-        )*/
         return this.http.get<Product[]>(this.rootUrl + "products");
     }
 
     getByBarcode(barcode: string) {
-        //return new Observable<Product>((subs)=>subs.next(new Product(2, "brand1", "model1aaa", "url1", "barcode1", 4, 20,"descriptttttttt",Category.A)))
         return this.http.get<Product>(this.rootUrl + "products/barcode/" + barcode);
     }
 
