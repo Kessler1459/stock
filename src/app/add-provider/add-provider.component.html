@@ -1,0 +1,16 @@
+<button mat-raised-button (click)=toggleAdd.emit()>Back</button>
+<form [formGroup]=form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Lead time</mat-label>
+        <input type="number" matInput formControlName="leadTime">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+    </mat-form-field>
+    <button mat-button type="submit">Submit</button>
+</form>

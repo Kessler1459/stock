@@ -1,0 +1,22 @@
+<div *ngIf="!editing">
+    <table mat-table [dataSource]=providers>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let provider"> {{provider.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="leadTime">
+        <th mat-header-cell *matHeaderCellDef> Lead time </th>
+        <td mat-cell *matCellDef="let provider"> {{provider.leadTime}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let provider"> {{provider.email}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
+<button mat-raised-button (click)=toggleAdd()>Add</button>
+</div>
+
+<app-add-provider [providers]=providers *ngIf="editing" (toggleAdd)="toggleAdd()"></app-add-provider>

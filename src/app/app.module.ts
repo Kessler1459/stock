@@ -12,6 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { InOutComponent } from './in-out/in-out.component';
+import { ProvidersListComponent } from './providers-list/providers-list.component';
+import { AddProviderComponent } from './add-provider/add-provider.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +23,9 @@ import { InOutComponent } from './in-out/in-out.component';
         ItemDetailsComponent,
         ItemEditComponent,
         AddItemComponent,
-        InOutComponent
+        InOutComponent,
+        ProvidersListComponent,
+        AddProviderComponent
     ],
     imports: [
         BrowserModule,

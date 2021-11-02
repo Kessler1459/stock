@@ -24,7 +24,9 @@ export class ProductListComponent implements OnInit {
     constructor(private productService: ProductService, private router: Router) { }
 
     ngOnInit(): void {
-        this.productService.getAll().then((pList) => {
+        this.productService.getAll().subscribe((pList) => {
+            console.log(pList);
+            
             this.productList = pList;
             this.dataSource = new MatTableDataSource(this.productList);
             this.dataSource.paginator = this.paginator;
@@ -41,7 +43,7 @@ export class ProductListComponent implements OnInit {
     }
 
     onProductSelect(prod: Product) {
-        this.router.navigate(["items/details/:" + prod.barcode])
+        this.router.navigate(["items/details/" + prod.barcode])
     }
 }
 
