@@ -25,7 +25,10 @@ export class AddItemComponent implements OnInit {
             description: new FormControl(),
             price: new FormControl(),
             category: new FormControl(),
-            provider: new FormControl()
+            provider: new FormControl(),
+            serviceLevel: new FormControl(),
+            prepareCost:new FormControl(),
+            storageCost:new FormControl()
         })
     }
 
@@ -37,10 +40,11 @@ export class AddItemComponent implements OnInit {
         newProd.description = this.form.value.description;
         newProd.price = this.form.value.price;
         newProd.units = 0;
-        //todo imgurl?
         newProd.category = this.form.value.category;
         newProd.provider= this.form.value.provider.id;
-        
+        newProd.serviceLevel=this.form.value.serviceLevel/100;
+        newProd.prepareCost=this.form.value.prepareCost;
+        newProd.storageCost=this.form.value.storageCost;
         this.productService.addProduct(newProd);
     }
 

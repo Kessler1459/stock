@@ -1,38 +1,55 @@
 <section class="cont border">
     <h1>New item</h1>
     <form class="flex" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-            <mat-label>Model</mat-label>
-            <input matInput formControlName="model">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Brand</mat-label>
-            <input matInput formControlName="brand">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Barcode</mat-label>
-            <input matInput formControlName="barcode">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Description</mat-label>
-            <input matInput formControlName="description">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Price</mat-label>
-            <input type="number" matInput formControlName="price">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Category</mat-label>
-            <mat-select formControlName="category">
-                <mat-option *ngFor="let cat of getCategories()" [value]=cat>{{cat}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Provider</mat-label>
-            <mat-select formControlName="provider">
-                <mat-option *ngFor="let prov of providers" [value]=prov>{{prov.name}}</mat-option>
-            </mat-select>
-        </mat-form-field>
+        <div class="flexrow">
+            <mat-form-field appearance="fill">
+                <mat-label>Model</mat-label>
+                <input matInput formControlName="model">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Brand</mat-label>
+                <input matInput formControlName="brand">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Barcode</mat-label>
+                <input matInput formControlName="barcode">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput formControlName="price">
+            </mat-form-field>
+        </div>
+        <div class="flexrow">
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option *ngFor="let cat of getCategories()" [value]=cat>{{cat}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Provider</mat-label>
+                <mat-select formControlName="provider">
+                    <mat-option *ngFor="let prov of providers" [value]=prov>{{prov.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Service level</mat-label>
+                <input type="number" matInput formControlName="serviceLevel">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Prepare cost</mat-label>
+                <input type="number" matInput formControlName="prepareCost">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Storage cost</mat-label>
+                <input type="number" matInput formControlName="storageCost">
+            </mat-form-field>
+        </div>
+
         <button mat-raised-button type="submit">Submit</button>
     </form>
 </section>

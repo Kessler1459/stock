@@ -2,11 +2,20 @@ h1{
     font-weight: 500;
 }
 
-.flex form{
+.flex{
     display: flex;
     flex-direction: column;
 }
 
 button{
     width: 100%;
+}
+
+mat-form-field{
+    margin: 1%;
+}
+
+.flexrow{
+    display: flex;
+    justify-content: space-between;
 }

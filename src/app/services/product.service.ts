@@ -8,7 +8,7 @@ import { Category, Product } from './../classes/product';
     providedIn: 'root'
 })
 export class ProductService {
-    rootUrl = "http://localhost:8080/";
+    private rootUrl = "http://localhost:8080/";
 
     constructor(private http: HttpClient) { }
 
@@ -21,16 +21,15 @@ export class ProductService {
     }
 
     editProduct(prod: Product) {
-        console.log(" editado " + JSON.stringify(prod));
-
+        return this.http.put(this.rootUrl+"products", prod).subscribe(res=>console.log(res));
     }
 
     addProduct(prod: Product) {
-        return this.http.post(this.rootUrl + "products", prod).subscribe((res)=>console.log(res));
+        return this.http.post(this.rootUrl + "products", prod).subscribe(res=>console.log(res));
     }
 
     changeQuantity(barcode: string, value: any) {
-        return this.http.post(this.rootUrl + "movements", { barcode, quantity: value });
+        return this.http.post(this.rootUrl + "movements", { barcode, quantity: value }).subscribe(res=>console.log(res));
     }
 
     getStats(productId:number){

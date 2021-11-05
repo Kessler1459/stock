@@ -6,10 +6,29 @@ h1{
 }
 
 .flex{
-    display: flex;
-    flex-direction: column;
     align-items: stretch;
     mat-form-field{
         font-size: 9pt;
     }
+}
+
+.column-left{
+    float: left;
+}
+
+.column-right{
+    float: right;
+}
+
+mat-form-field{
+    margin: 1%;
+}
+
+button{
+    width: 100%;
+}
+
+.flexrow{
+    display: flex;
+    justify-content: space-between;
 }
