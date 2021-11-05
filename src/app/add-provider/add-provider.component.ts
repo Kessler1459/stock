@@ -29,6 +29,7 @@ export class AddProviderComponent {
         newProv.email=this.form.value.email;
         this.providerService.add(newProv);
         this.providers.push(newProv);
+        this.toggleAdd.emit();
     }
 
 }

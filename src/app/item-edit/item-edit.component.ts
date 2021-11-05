@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
 import { Category, Product } from '../classes/product';
 import { ProductService } from '../services/product.service';
 
@@ -11,6 +12,8 @@ import { ProductService } from '../services/product.service';
 export class ItemEditComponent implements OnInit {
     @Input()
     product: Product;
+    @Output()
+    toggleEdit=new EventEmitter<void>();
     categories=Category;
     form:FormGroup;
 
@@ -34,7 +37,8 @@ export class ItemEditComponent implements OnInit {
         this.product.description=this.form.value.description;
         this.product.price=this.form.value.price;
         this.product.category=this.form.value.category;
-        this.productService.editProduct(this.product)
+        this.productService.editProduct(this.product);
+        this.toggleEdit.emit();
     }
 
     getCategories(){

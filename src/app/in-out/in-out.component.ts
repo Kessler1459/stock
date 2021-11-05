@@ -60,6 +60,7 @@ export class InOutComponent implements AfterViewInit {
 
     onValueChangesScanner(result: QuaggaJSResultObject) {
         this.barcode = result.codeResult.code ?? "";
+        this.onChange();
     }
 
 }
