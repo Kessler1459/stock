@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Stat } from '../classes/stat';
 import { Category, Product } from './../classes/product';
 
 @Injectable({
@@ -30,5 +31,9 @@ export class ProductService {
 
     changeQuantity(barcode: string, value: any) {
         return this.http.post(this.rootUrl + "movements", { barcode, quantity: value });
+    }
+
+    getStats(productId:number){
+        return this.http.get<Stat>(this.rootUrl+"products/"+productId+"/stats");
     }
 }

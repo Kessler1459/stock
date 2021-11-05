@@ -1,0 +1,18 @@
+@import "../../styles.scss";
+
+h1{
+    font-weight: 500;
+}
+
+.row{
+    display: flex;
+}
+
+.column{
+    flex: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}

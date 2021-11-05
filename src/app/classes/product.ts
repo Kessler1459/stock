@@ -10,9 +10,12 @@ export class Product {
     units: number | undefined;
     description: string | undefined;
     category: Category | undefined;
-    provider : Provider |number| undefined
+    provider: Provider | number | undefined;
+    serviceLevel: number | undefined;
+    prepareCost: number | undefined;
+    storageCost: number | undefined;
 
-    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?:Provider) {
+    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?: Provider, serviceLevel?: number,prepareCost?: number,storageCost?: number) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -23,6 +26,9 @@ export class Product {
         this.description = description;
         this.category = category;
         this.provider = provider;
+        this.serviceLevel = serviceLevel;
+        this.prepareCost=prepareCost;
+        this.storageCost=storageCost;
     }
 }
 

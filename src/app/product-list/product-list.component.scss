@@ -1,12 +1,19 @@
 mat-form-field{
     width: 100%;
-    background-color: rgb(66, 66, 66);
-    border-top-right-radius: 3%;
-    border-top-left-radius: 3%;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    background-color: #424242;
 }
 
 table {
+   // border-collapse: collapse;
 	width: 100%;
+    border-radius: 1vw;
+    thead{
+        border-top-left-radius: 1vw;
+        border-top-right-radius: 1vw;
+       
+    }
 	th {
 		&:hover {
 			cursor: pointer;
@@ -22,5 +29,6 @@ table {
 }
 
 mat-paginator{
-    border-radius: 3%;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
 }

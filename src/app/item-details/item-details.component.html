@@ -1,13 +1,47 @@
-<section class="cont">
+<section class="cont border">
     <div *ngIf="!edit && product">
-        <h2>{{product.model}}, product.brand</h2>
-        <i>{{product.barcode}}</i>
-        <p>{{product.description}}</p>
-        <img [src]=product.imageUrl alt="product-image">
-        <p>{{product.units}} units</p>
-        <p>{{product.price}}$</p>
-        <p>{{product.category}}</p>
+        <h1>{{product.model}}, {{product.brand}}</h1>
+        <section class="desc">
+            <div>
+                <i>Barcode: {{product.barcode}}</i>
+                <p>Description: {{product.description}}</p>
+            </div>
+            <ul>
+                <li>Units: {{product.units}}</li>
+                <li>Price: {{product.price}}$</li>
+                <li>Category: {{product.category}}</li>
+            </ul>
+        </section>
+        <section *ngIf="stat">
+            <h2>Stats</h2>
+            <table>
+                <tr>
+                    <th>Anual cost</th>
+                    <td>{{stat.annualConsumption}}</td>
+                </tr>
+                <tr>
+                    <th>Daily demand</th>
+                    <td>{{stat.dailyDemand}}</td>
+                </tr>
+                <tr>
+                    <th>Demand dispersion</th>
+                    <td>{{stat.demandDispersion.toFixed(3)}}</td>
+                </tr>
+                <tr>
+                    <th>Suggested category</th>
+                    <td>{{stat.optimalCategory}}</td>
+                </tr>
+                <tr>
+                    <th>Optimal quantity</th>
+                    <td>{{stat.optimalQuantity}}</td>
+                </tr>
+                <tr class="last">
+                    <th>Reorder point</th>
+                    <td>{{stat.reorder}}</td>
+                </tr>
+            </table>
+        </section>
     </div>
     <app-item-edit [product]="product" *ngIf=edit></app-item-edit>
-    <button mat-stroked-button (click)="toggleEdit()">Edit</button>
+    <button mat-stroked-button (click)="toggleEdit()">{{edit?"Back":"Edit"}}</button>
 </section>

@@ -3,6 +3,7 @@ $primary-color:#e91e63;
 $primary-color-hover:#bb194f;
 $gray-light:#424242;
 $gray-dark:rgb(46 46 46);
+$gray-font:rgb(202, 202, 202);
 
 html,
 body {
@@ -16,10 +17,19 @@ body {
     background-color: $gray-dark;
 }
 
+ul{
+    list-style: none;
+}
+
 .cont{
-    max-width: 80vw;
-    margin: 3% auto auto auto;
-    background-color: $gray-dark;
-    border: 2px $gray-light solid;
-    border-radius: 3%;
+    padding: 4%;
+    //text-align-last: center;
+    align-items: center;
+    max-width:75vw;
+    margin: 2.1% auto auto auto;
+}
+
+.border{
+    border: 1px solid $gray-light;
+    border-radius: 1vw;
 }

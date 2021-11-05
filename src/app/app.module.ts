@@ -14,6 +14,7 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { InOutComponent } from './in-out/in-out.component';
 import { ProvidersListComponent } from './providers-list/providers-list.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,7 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
         AddItemComponent,
         InOutComponent,
         ProvidersListComponent,
-        AddProviderComponent
+        AddProviderComponent,
     ],
     imports: [
         BrowserModule,
@@ -34,7 +35,8 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        AngularMaterialModule
+        AngularMaterialModule,
+        BarcodeScannerLivestreamModule
     ],
     providers: [],
     bootstrap: [AppComponent]

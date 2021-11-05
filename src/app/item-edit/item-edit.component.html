@@ -1,30 +1,32 @@
-<h2>Edit</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
-        <mat-label>Model</mat-label>
-        <input matInput formControlName="model">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Brand</mat-label>
-        <input matInput formControlName="brand">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Barcode</mat-label>
-        <input matInput formControlName="barcode">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <input matInput formControlName="description">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Price</mat-label>
-        <input type="number" matInput formControlName="price"> 
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Category</mat-label>
-        <mat-select formControlName="category">
-            <mat-option *ngFor="let cat of getCategories()" [value]=cat >{{cat}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button type="submit">Submit</button>
-</form>
+<section class="flex">
+    <h1>Edit</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Model</mat-label>
+            <input matInput formControlName="model">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Brand</mat-label>
+            <input matInput formControlName="brand">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Barcode</mat-label>
+            <input matInput formControlName="barcode">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName="price">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let cat of getCategories()" [value]=cat>{{cat}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button type="submit">Submit</button>
+    </form>
+</section>

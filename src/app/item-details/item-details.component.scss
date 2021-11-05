@@ -1,0 +1,46 @@
+@import '../../styles.scss';
+
+h1 {
+    font-weight: 500;
+    font-size: 27pt;
+    color: white;
+    margin-bottom: 4%;
+    text-align-last: center;
+}
+
+h2 {
+    margin-top: 4%;
+    text-align: -webkit-center;
+    color: white;
+}
+
+div {
+    color: $gray-font;
+}
+
+.desc {
+    column-count: 2;
+    column-rule: 1px dashed $gray-light;
+    text-align-last: center;
+
+    ul {
+        display: inline;
+    }
+}
+
+table {
+    margin-inline: auto;
+    width: -webkit-fill-available;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid $gray-light;
+    }
+    tr.last {
+        border-bottom: none;
+    }
+}
+
+button{
+    width: 100%;
+}
