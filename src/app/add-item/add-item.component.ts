@@ -46,8 +46,7 @@ export class AddItemComponent implements OnInit {
         newProd.serviceLevel=this.form.value.serviceLevel/100;
         newProd.prepareCost=this.form.value.prepareCost;
         newProd.storageCost=this.form.value.storageCost;
-        this.productService.addProduct(newProd);
-        this.router.navigate(["items"]);
+        this.productService.addProduct(newProd).subscribe(()=>this.router.navigate(["items"]));
     }
 
     getCategories() {

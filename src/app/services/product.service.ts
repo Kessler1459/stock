@@ -25,7 +25,7 @@ export class ProductService {
     }
 
     addProduct(prod: Product) {
-        return this.http.post(this.rootUrl + "products", prod).subscribe(res=>console.log(res));
+        return this.http.post(this.rootUrl + "products", prod);
     }
 
     changeQuantity(barcode: string, value: any) {

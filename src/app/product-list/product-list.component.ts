@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 
 export class ProductListComponent implements OnInit {
     productList: Product[] = [];
-    displayedColumns: string[] = ['id', 'brand', "model", "barcode", "price", "units"];
+    displayedColumns: string[] = [ 'brand', "model", "barcode", "price", "units"];
     dataSource: MatTableDataSource<Product>;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
