@@ -31,7 +31,7 @@
                     <th>Suggested category</th>
                     <td>{{stat.optimalCategory}}</td>
                 </tr>
-                <tr>
+                <tr *ngIf="product.category!=='C'">
                     <th>Optimal quantity</th>
                     <td>{{stat.optimalQuantity}}</td>
                 </tr>
