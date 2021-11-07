@@ -30,6 +30,10 @@
                     <mat-option *ngFor="let cat of getCategories()" [value]=cat>{{cat}}</mat-option>
                 </mat-select>
             </mat-form-field>
+            <mat-form-field *ngIf="form.value.category==='C'" appearance="fill">
+                <mat-label>Revision period</mat-label>
+                <input type="number" matInput formControlName="revisionPeriod">
+            </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Provider</mat-label>
                 <mat-select formControlName="provider">

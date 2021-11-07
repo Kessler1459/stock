@@ -35,9 +35,15 @@
                     <th>Optimal quantity</th>
                     <td>{{stat.optimalQuantity}}</td>
                 </tr>
-                <tr class="last">
-                    <th>Reorder point</th>
-                    <td>{{stat.reorder}}</td>
+                <tr [ngSwitch]="product.category" class="last">
+                    <ng-container *ngSwitchCase="'C'">
+                        <th>Revision period</th>
+                        <td>{{product.revisionPeriod}}</td>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        <th>Reorder point</th>
+                        <td>{{stat.reorder}}</td>
+                    </ng-container>
                 </tr>
             </table>
         </section>

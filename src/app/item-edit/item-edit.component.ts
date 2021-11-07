@@ -34,9 +34,10 @@ export class ItemEditComponent implements OnInit {
             provider: new FormControl(this.product.provider),
             serviceLevel: new FormControl(this.product.serviceLevel),
             prepareCost: new FormControl(this.product.prepareCost),
-            storageCost: new FormControl(this.product.storageCost)
+            storageCost: new FormControl(this.product.storageCost),
+            revisionPeriod: new FormControl()
         })
-    }//todo ACA
+    }
 
     onSubmit() {
         this.product.model = this.form.value.model;
@@ -49,6 +50,7 @@ export class ItemEditComponent implements OnInit {
         this.product.serviceLevel = this.form.value.serviceLevel;
         this.product.prepareCost = this.form.value.prepareCost;
         this.product.storageCost = this.form.value.storageCost;
+        this.product.revisionPeriod = this.product.category === "C" ? this.form.value.revisionPeriod : "";
         this.productService.editProduct(this.product);
         this.toggleEdit.emit();
     }

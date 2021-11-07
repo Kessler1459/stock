@@ -14,8 +14,9 @@ export class Product {
     serviceLevel: number | undefined;
     prepareCost: number | undefined;
     storageCost: number | undefined;
+    revisionPeriod: number | undefined;
 
-    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?: Provider, serviceLevel?: number,prepareCost?: number,storageCost?: number) {
+    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?: Provider, serviceLevel?: number,prepareCost?: number,storageCost?: number,revisionPeriod?:number) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -29,6 +30,7 @@ export class Product {
         this.serviceLevel = serviceLevel;
         this.prepareCost=prepareCost;
         this.storageCost=storageCost;
+        this.revisionPeriod=revisionPeriod;
     }
 }
 

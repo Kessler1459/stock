@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category, Product } from '../classes/product';
@@ -15,7 +15,7 @@ export class AddItemComponent implements OnInit {
     categories = Category;
     providers: Provider[];
     form: FormGroup;
-    constructor(private productService: ProductService, private providerService: ProviderService, private router:Router) { }
+    constructor(private productService: ProductService, private providerService: ProviderService, private router: Router) { }
 
     ngOnInit(): void {
         this.providerService.getAll().subscribe(providers => this.providers = providers)
@@ -28,8 +28,9 @@ export class AddItemComponent implements OnInit {
             category: new FormControl(),
             provider: new FormControl(),
             serviceLevel: new FormControl(),
-            prepareCost:new FormControl(),
-            storageCost:new FormControl()
+            prepareCost: new FormControl(),
+            storageCost: new FormControl(),
+            revisionPeriod: new FormControl()
         })
     }
 
@@ -42,11 +43,12 @@ export class AddItemComponent implements OnInit {
         newProd.price = this.form.value.price;
         newProd.units = 0;
         newProd.category = this.form.value.category;
-        newProd.provider= this.form.value.provider.id;
-        newProd.serviceLevel=this.form.value.serviceLevel/100;
-        newProd.prepareCost=this.form.value.prepareCost;
-        newProd.storageCost=this.form.value.storageCost;
-        this.productService.addProduct(newProd).subscribe(()=>this.router.navigate(["items"]));
+        newProd.provider = this.form.value.provider.id;
+        newProd.serviceLevel = this.form.value.serviceLevel / 100;
+        newProd.prepareCost = this.form.value.prepareCost;
+        newProd.storageCost = this.form.value.storageCost;
+        newProd.revisionPeriod = newProd.category === "C" ? this.form.value.revisionPeriod : "";
+        this.productService.addProduct(newProd).subscribe(() => this.router.navigate(["items"]));
     }
 
     getCategories() {
