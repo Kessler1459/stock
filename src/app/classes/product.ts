@@ -15,8 +15,9 @@ export class Product {
     prepareCost: number | undefined;
     storageCost: number | undefined;
     revisionPeriod: number | undefined;
+    reorderPoint: number |undefined;
 
-    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?: Provider, serviceLevel?: number,prepareCost?: number,storageCost?: number,revisionPeriod?:number) {
+    constructor(id?: number, brand?: string, model?: string, imageUrl?: string, barcode?: string, price?: number, units?: number, description?: string, category?: Category, provider?: Provider, serviceLevel?: number,prepareCost?: number,storageCost?: number,revisionPeriod?:number,reorderPoint?:number) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -31,6 +32,7 @@ export class Product {
         this.prepareCost=prepareCost;
         this.storageCost=storageCost;
         this.revisionPeriod=revisionPeriod;
+        this.reorderPoint=reorderPoint;
     }
 }
 
